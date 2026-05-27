@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarti & Lalit - Wedding Invitation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #f4f6f8; /* Soft pastel blue/grey like the video */
+            color: #334252;
+     …
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarti & Lalit - Wedding Invitation</title>
+    
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #f4f6f8; /* Soft pastel blue/grey like the video */
+            color: #334252;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- THE SPLIT GATE ENTRANCE (Inspired by e341cb9f9dde418a886ad5b5363986a0.mp4) --- */
+        #gate-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 9999;
+            display: flex;
+            pointer-events: auto;
+            transition: visibility 0s linear 1.2s; /* Completely removes interaction after animation */
+        }
+
+        #gate-container.opened {
+            visibility: hidden;
+        }
+
+        .gate {
+            width: 50%;
+            height: 100%;
+            background: #e2e8f0; 
+            background-image: linear-gradient(135deg, #e6edf5 0%, #f4f7fa 100%);
+            position: absolute;
+            top: 0;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .gate-left {
+            left: 0;
+            border-right: 3px double #b8c9d9;
+            justify-content: flex-end;
+        }
+
+        .gate-right {
+            right: 0;
+            border-left: 3px double #b8c9d9;
+            justify-content: flex-start;
+        }
+
+        /* Gate Handles/Decorative Center Details */
+        .gate-left::after, .gate-right::after {
+            content: '';
+            width: 20px;
+            height: 100px;
+            border: 2px solid #8b6d3b;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gate-left::after { right: 10px; border-radius: 10px 0 0 10px; border-right: none; }
+        .gate-right::after { left: 10px; border-radius: 0 10px 10px 0; border-left: none; }
+
+        /* Animation triggers */
+        #gate-container.opened .gate-left {
+            transform: translateX(-100%);
+        }
+
+        #gate-container.opened .gate-right {
+            transform: translateX(100%);
+        }
+
+        /* Action Button */
+        #open-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            padding: 18px 36px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background-color: #ffffff;
+            color: #6a8caf;
+            border: 1px solid #6a8caf;
+            border-radius: 40px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        #open-btn:hover {
+            background-color: #6a8caf;
+            color: #ffffff;
+            transform: translate(-50%, -53%);
+            box-shadow: 0 15px 30px rgba(106, 140, 175, 0.3);
+        }
+
+        #gate-container.opened #open-btn {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+
+        /* --- TYPOGRAPHY & LAYOUT --- */
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #6a8caf;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+        
+        /* Increased Font Sizes for Aarti & Lalit */
+        h1 { font-size: 6.5rem; } 
+        h2 { font-size: 4.5rem; } 
+        
+        h3 { 
+            font-size: 1.6rem; 
+            font-weight: 600; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            margin-bottom: 15px; 
+            color: #5a7693;
+        }
+        
+        p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin: 12px 0;
+        }
+
+        .shloka {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #8b6d3b; /* Premium gold accent */
+            margin-bottom: 35px;
+            line-height: 2;
+        }
+
+        .ampersand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #8b6d3b;
+        }
+
+        .date-highlight {
+            font-size: 1.25rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-top: 1px solid #6a8caf;
+            border-bottom: 1px solid #6a8caf;
+            padding: 12px 0;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* Section Containers */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e0e6ed;
+            position: relative;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.75);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            max-width: 650px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Smooth Scroll Fade Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .family-details {
+            margin: 25px 0;
+            font-size: 1.05rem;
+            color: #4a5a6a;
+        }
+
+        .rsvp-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 35px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: center;
+        }
+        
+        @media(max-width: 600px) {
+            h1 { font-size: 4.5rem; }
+            h2 { font-size: 3.5rem; }
+            .rsvp-list { grid-template-columns: 1fr; }
+        }
+/* Unique backgrounds for each page */
+#page1 {
+    background-image: url('cover-floral-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#page2 {
+    background-image: url('ganesha-shloka-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#page3 {
+    background-image: url('ring-ceremony-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#page6 {
+    background-image: url('reception-resort-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#page7 {
+    background-image: url('rsvp-closing-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- THE GATES -->
+    <div id="gate-container">
+        <div class="gate gate-left"></div>
+        <div class="gate gate-right"></div>
+        <button id="open-btn" onclick="openGates()">Open Invitation</button>
+    </div>
+
+    <!-- PAGE 1: Cover -->
+    <section id="page1">
+        <div class="content-box fade-in">
+            <div class="date-highlight">Wednesday, 1st July 2k26</div>
+            <h1>Aarti</h1>
+            <div class="ampersand">Weds</div>
+            <h1>Lalit</h1>
+        </div>
+    </section>
+
+    <!-- PAGE 2: Invitation & Family -->
+    <section id="page2">
+        <div class="content-box fade-in">
+            <p class="shloka">
+                वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+                निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+            </p>
+            <p>We cordially invite you <br> With family on the auspicious occasion of <br> Wedding ceremony of our Daughter</p>
+            
+            <h2>Aarti</h2>
+            <div class="family-details">
+                Granddaughter of <strong>Shri Prem Chand Jain</strong><br>
+                Smt. Sumitra Devi<br><br>
+                Daughter of <strong>Shri Jagannath Jain</strong><br>
+                Smt. Kamlesh Jain
+            </div>
+            
+            <div class="ampersand">&</div>
+            
+            <h2>Lalit</h2>
+            <div class="family-details">
+                Grandson of Late Grandfather Name<br>
+                Late Smt. Grandmother Name<br><br>
+                Son of <strong>Shri Pratap Dhameja</strong><br>
+                Smt. Jaya Dhameja
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: Ring Ceremony -->
+    <section id="page3">
+        <div class="content-box fade-in">
+            <h3>Ring Ceremony</h3>
+            <div class="date-highlight">Wednesday <br> 1 / July / 2026</div>
+            <p style="font-size: 1.4rem; color: #8b6d3b;"><strong>At 9:00 AM</strong></p>
+        </div>
+    </section>
+
+    <!-- PAGE 6: Reception -->
+    <section id="page6">
+        <div class="content-box fade-in">
+            <h3>Reception</h3>
+            <div class="date-highlight">Wednesday <br> 1 / July / 2026</div>
+            <p><strong>Venue:</strong><br>
+            <span style="font-size: 1.5rem; color: #5a7693; display:block; margin-top:5px;">Rajwada Resort</span>
+            Raipur</p>
+        </div>
+    </section>
+
+    <!-- PAGE 7: RSVP & Compliments -->
+    <section id="page7">
+        <div class="content-box fade-in">
+            <h3>R.S.V.P</h3>
+            <p><strong>Shri Jagannath Jain</strong><br>Smt. Kamlesh Jain</p>
+            
+            <hr style="border: 0; height: 1px; background: #d1d9e0; margin: 35px 0;">
+            
+            <h3>With Best Compliments From</h3>
+            <ul class="rsvp-list">
+                <li>Shri Prem Chand Jain</li>
+                <li>Shri Jagmandar Jain</li>
+                <li>Shri Subhash Jain</li>
+                <li>Shri Mukesh Jain</li>
+                <li>Shri Rajesh Jain</li>
+                <li>Shri Vijay Jain</li>
+                <li>Shri Deepak Jain</li>
+                <li>Shri Sumit Jain</li>
+                <li>Shri Manish Jain</li>
+            </ul>
+
+            <h3>Sweet Smile</h3>
+            <p style="font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #8b6d3b; margin: 0;">Manish, Pragya, Pranav, Charvik</p>
+        </div>
+    </section>
+
+    <!-- JavaScript Handling Interactivity -->
+    <script>
+        // Function to split the gates open
+        function openGates() {
+            const gateContainer = document.getElementById('gate-container');
+            gateContainer.classList.add('opened');
+            
+            // Allow page scrolling only after the invitation is opened
+            document.body.style.overflowY = "auto";
+        }
+
+        // Lock background scroll initially until gates are opened
+        document.body.style.overflowY = "hidden";
+
+        // Scroll Reveal Animations setup
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15 
+            });
+
+            const hiddenElements = document.querySelectorAll('.fade-in');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
